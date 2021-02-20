@@ -27,7 +27,7 @@ void Print(void)
 
 void Insert(int x, int n)
 {
-    Node* temp = malloc(sizeof(Node));
+    Node* temp = (Node*)malloc(sizeof(Node));
     if (temp != NULL)
     {
         temp->data = x;

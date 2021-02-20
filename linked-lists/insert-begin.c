@@ -1,5 +1,5 @@
 //
-// Created by john on 2/19/21.
+// Created by john on 2/17/21.
 //
 
 #include <stdio.h>
@@ -15,7 +15,7 @@ Node* head;
 
 void Insert(int x)
 {
-    Node* temp = malloc(sizeof(Node));
+    Node* temp = (Node*)malloc(sizeof(Node));
     if (temp != NULL)
     {
         temp->data = x;
@@ -23,11 +23,10 @@ void Insert(int x)
         head = temp;
     }
 }
-
-void Print()
+void Print(void)
 {
     Node* cursor = head;
-    printf("[ ");
+    printf("List is: [ ");
     while (cursor != NULL)
     {
         printf("%d ", cursor->data);
@@ -36,27 +35,18 @@ void Print()
     printf("]\n");
 }
 
-void Reverse(Node* p)
-{
-    if (p->next == NULL)
-    {
-        head = p;
-        return;
-    }
-    Reverse(p->next);
-    Node* q = p->next;
-    q->next = p;
-    p->next = NULL;
-}
-
 int main(void)
 {
     head = NULL;
-    for (int i = 1; i <= 5;i++) Insert(i);
-    printf("Original list : ");
-    Print();
-    Reverse(head);
-    printf("Reversed list : ");
-    Print();
+    printf("How many numbers? ");
+    int n, i, x;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter the number: ");
+        scanf("%d", &x);
+        Insert(x);
+        Print();
+    }
     return 0;
 }

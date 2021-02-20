@@ -15,7 +15,7 @@ Node* head;
 
 void Insert(int x)
 {
-    Node* temp = malloc(sizeof(Node));
+    Node* temp = (Node*)malloc(sizeof(Node));
     if (temp != NULL)
     {
         temp->data = x;

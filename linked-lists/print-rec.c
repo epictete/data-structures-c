@@ -27,13 +27,13 @@ void ReversePrint(Node* p)
     {
         return;
     }
-    Print(p->next);
+    ReversePrint(p->next);
     printf("%d ", p->data);
 }
 
 Node* Insert(Node* head, int x)
 {
-    Node* temp = malloc(sizeof(Node));
+    Node* temp = (Node*)malloc(sizeof(Node));
     if (temp != NULL)
     {
         temp->data = x;

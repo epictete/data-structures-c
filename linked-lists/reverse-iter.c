@@ -13,7 +13,7 @@ typedef struct Node
 
 Node* Insert(Node* head, int x)
 {
-    Node* temp = malloc(sizeof(Node));
+    Node* temp = (Node*)malloc(sizeof(Node));
     if (temp != NULL)
     {
         temp->data = x;
