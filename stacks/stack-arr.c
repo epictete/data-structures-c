@@ -1,7 +1,3 @@
-//
-// Created by john on 2/20/21.
-//
-
 #include <stdio.h>
 #define MAX_SIZE 101
 
