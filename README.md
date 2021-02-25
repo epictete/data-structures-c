@@ -3,7 +3,7 @@
 Here are some implementations of the most commonly used data structures :    
 
 - [x] [Linked Lists](./linked-lists)
-- [ ] [Stacks](./stacks)
+- [x] [Stacks](./stacks)
 - [ ] Queues
 - [ ] Trees
 - [ ] Graphs
