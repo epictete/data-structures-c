@@ -35,13 +35,9 @@ void Enqueue(int x)
 		return;
 	}
 	else if (IsEmpty())
-	{
 		front = rear = 0;
-	}
 	else
-	{
 		rear = (rear + 1) % n;
-	}
 
 	A[rear] = x;
 }
@@ -54,13 +50,9 @@ void Dequeue(void)
 		return;
 	}
 	else if (front == rear)
-	{
 		front = rear = -1;
-	}
 	else
-	{
 		front = (front + 1) % n;
-	}
 }
 
 void Print(void)

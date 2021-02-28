@@ -12,18 +12,18 @@ void Push(char c)
     A[++top] = c;
 }
 
-void Pop()
+void Pop(void)
 {
     if (top == -1) return;
     top--;
 }
 
-char Top()
+char Top(void)
 {
     return A[top];
 }
 
-int IsEmpty()
+int IsEmpty(void)
 {
     if (top == -1) return 1;
     return 0;
@@ -42,24 +42,27 @@ int IsBalanced(char exp[])
     for (int i = 0; i < strlen(exp); i++)
     {
         if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[')
-        {
             Push(exp[i]);
-        }
+
         if (exp[i] == ')' || exp[i] == '}' || exp[i] == ']')
         {
             if (IsEmpty() || !IsPair(exp[i])) return 0;
             Pop();
         }
     }
+
     return IsEmpty();
 }
 
 int main(void)
 {
     char exp[51];
+
     printf("Enter expression: ");
     scanf("%s", exp);
+
     if (IsBalanced(exp)) printf("Balanced\n");
     else printf("Not balanced\n");
+
     return 0;
 }

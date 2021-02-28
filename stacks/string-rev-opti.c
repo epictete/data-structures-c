@@ -12,6 +12,7 @@ void Reverse(char C[], int n)
 {
     int i = 0;
     int j = n - 1;
+
     while (i < j)
     {
         char temp = C[i];
@@ -25,10 +26,14 @@ void Reverse(char C[], int n)
 int main(void)
 {
     char C[51];
+
     printf("Enter a string\t:");
     scanf("%s", C);
+
     Reverse(C, strlen(C));
+
     printf("Reversed\t:%s", C);
     printf("\n");
+
     return 0;
 }

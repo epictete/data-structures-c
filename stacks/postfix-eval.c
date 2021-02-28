@@ -11,7 +11,7 @@
 int A[MAX_SIZE];
 int top = -1;
 
-int IsEmpty()
+int IsEmpty(void)
 {
     if (top == -1) return 1;
     return 0;
@@ -24,20 +24,22 @@ void Push(char x)
         printf("Error: Stack overflow\n");
         return;
     }
+
     A[++top] = x;
 }
 
-void Pop()
+void Pop(void)
 {
     if (IsEmpty())
     {
         printf("Error: Stack is empty\n");
         return;
     }
+
     top--;
 }
 
-char Top()
+char Top(void)
 {
     return A[top];
 }
@@ -69,30 +71,38 @@ int Postfix(char exp[])
         if (IsNumeric(exp[i]))
         {
             int operand = 0;
+
             while (i < strlen(exp) && IsNumeric(exp[i]))
             {
                 operand = (operand * 10) + exp[i] - '0';
                 i++;
             }
+
             i--;
             Push(operand);
         }
+
         if (IsOperator(exp[i]))
         {
             int op2 = Top(); Pop();
             int op1 = Top(); Pop();
             int res = Solve(op1, op2, exp[i]);
+
             Push(res);
         }
     }
+
     return Top();
 }
 
 int main(void )
 {
     char exp[51];
+
     printf("Enter expression : ");
     scanf("%s", exp);
+
     printf("Result : %d\n", Postfix(exp));
+
     return 0;
 }
