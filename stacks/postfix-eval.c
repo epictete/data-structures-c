@@ -13,8 +13,7 @@ int top = -1;
 
 int IsEmpty(void)
 {
-    if (top == -1) return 1;
-    return 0;
+    return top == -1;
 }
 
 void Push(char x)
@@ -46,14 +45,12 @@ char Top(void)
 
 int IsOperator(char c)
 {
-    if (c == '+' || c == '-' || c == '*' || c == '/') return 1;
-    return 0;
+    return c == '+' || c == '-' || c == '*' || c == '/';
 }
 
 int IsNumeric(char c)
 {
-    if (c >= '0' && c <= '9') return 1;
-    return 0;
+    return c >= '0' && c <= '9';
 }
 
 int Solve(int op1, int op2, char operand)

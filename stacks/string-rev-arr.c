@@ -7,8 +7,7 @@ int top = -1;
 
 int IsEmpty(void)
 {
-    if (top == -1) return 1;
-    return 0;
+    return top == -1;
 }
 
 void Push(char c)

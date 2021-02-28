@@ -6,14 +6,12 @@ int front = -1, rear = -1;
 
 int IsEmpty(void)
 {
-	if (front == -1 && rear == -1) return 1;
-	return 0;
+	return front == -1 && rear == -1;
 }
 
 int IsFull(void)
 {
-	if ((rear + 1) % n == front) return 1;
-	return 0;
+	return (rear + 1) % n == front;
 }
 
 int Front(void)
@@ -49,10 +47,8 @@ void Dequeue(void)
 		printf("Queue is empty\n");
 		return;
 	}
-	else if (front == rear)
-		front = rear = -1;
-	else
-		front = (front + 1) % n;
+	else if (front == rear) front = rear = -1;
+	else front = (front + 1) % n;
 }
 
 void Print(void)

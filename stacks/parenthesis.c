@@ -25,8 +25,7 @@ char Top(void)
 
 int IsEmpty(void)
 {
-    if (top == -1) return 1;
-    return 0;
+    return top == -1;
 }
 
 int IsPair(char c)

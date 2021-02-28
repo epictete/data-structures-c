@@ -8,8 +8,7 @@ int top = -1;
 
 int IsEmpty(void)
 {
-    if (top == -1) return 1;
-    return 0;
+    return top == -1;
 }
 
 void Push(char x)
@@ -42,8 +41,7 @@ char Top(void)
 
 int IsOperator(char c)
 {
-    if (c == '+' || c == '-' || c == '*' || c == '/') return 1;
-    return 0;
+    return c == '+' || c == '-' || c == '*' || c == '/';
 }
 
 int IsOperand(char c)
@@ -62,14 +60,12 @@ int HasHigherPrecedence(char top)
 
 int IsOpeningParenthesis(char c)
 {
-    if (c == '(' || c == '{' || c == '[') return 1;
-    return 0;
+    return c == '(' || c == '{' || c == '[';
 }
 
 int IsClosingParenthesis(char c)
 {
-    if (c == ')' || c == '}' || c == ']') return 1;
-    return 0;
+    return c == ')' || c == '}' || c == ']';
 }
 
 void InfixToPostfix(char* exp, char* res)

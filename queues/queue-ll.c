@@ -13,8 +13,7 @@ Node* rear = NULL;
 
 int IsEmpty(void)
 {
-    if (front == NULL && rear == NULL) return 1;
-    else return 0;
+    return front == NULL && rear == NULL;
 }
 
 void Enqueue(int x)
