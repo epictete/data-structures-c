@@ -4,7 +4,7 @@ Here are some implementations of the most commonly used data structures :
 
 - [x] [Linked Lists](./linked-lists)
 - [x] [Stacks](./stacks)
-- [ ] Queues
+- [x] [Queues](./queues)
 - [ ] Trees
 - [ ] Graphs
 
