@@ -54,8 +54,7 @@ int IsOperand(char c)
 
 int HasHigherPrecedence(char top)
 {
-    if (top == '*' || top == '/') return 1;
-    return 0;
+    return top == '*' || top == '/';
 }
 
 int IsOpeningParenthesis(char c)
