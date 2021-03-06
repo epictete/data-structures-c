@@ -5,7 +5,7 @@ Here are some implementations of the most commonly used data structures :
 - [x] [Linked Lists](./linked-lists)
 - [x] [Stacks](./stacks)
 - [x] [Queues](./queues)
-- [ ] Trees
+- [ ] [Trees](./trees)
 - [ ] Graphs
 
 It is written in C.
