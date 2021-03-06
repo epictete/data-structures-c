@@ -27,29 +27,32 @@ void Print(void)
 
 void Insert(int x, int n)
 {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    Node* temp = malloc(sizeof(Node));
 
-    if (temp != NULL)
+    if (temp == NULL)
     {
-        temp->data = x;
-        temp->next = NULL;
+        printf("Memory allocation failed");
+        exit(1);
+    }
 
-        if (n == 1)
-        {
-            temp->next = head;
-            head = temp;
-            return;
-        }
-        else
-        {
-            Node* cursor = head;
+    temp->data = x;
+    temp->next = NULL;
 
-            for (int i = 0; i < n - 2; i++)
-                cursor = cursor->next;
+    if (n == 1)
+    {
+        temp->next = head;
+        head = temp;
+        return;
+    }
+    else
+    {
+        Node* cursor = head;
 
-            temp->next = cursor->next;
-            cursor->next = temp;
-        }
+        for (int i = 0; i < n - 2; i++)
+            cursor = cursor->next;
+
+        temp->next = cursor->next;
+        cursor->next = temp;
     }
 }
 

@@ -13,14 +13,17 @@ Node* head;
 
 Node* GetNewNode(int x)
 {
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = malloc(sizeof(Node));
 
-    if (newNode != NULL)
+    if (newNode == NULL)
     {
-        newNode->data = x;
-        newNode->prev = NULL;
-        newNode->next = NULL;
+        printf("Memory allocation failed");
+        exit(1);
     }
+
+    newNode->data = x;
+    newNode->prev = NULL;
+    newNode->next = NULL;
 
     return newNode;
 }

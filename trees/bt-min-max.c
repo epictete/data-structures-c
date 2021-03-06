@@ -7,11 +7,17 @@ typedef struct Node
     struct Node* left;
     struct Node* right;
 }
-        Node;
+Node;
 
 Node* GetNewNode(int data)
 {
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = malloc(sizeof(Node));
+
+    if (newNode == NULL)
+    {
+        printf("Memory allocation failed");
+        exit(1);
+    }
 
     newNode->data = data;
     newNode->left = newNode->right = NULL;
@@ -28,14 +34,6 @@ Node* Insert(Node* root, int data)
     else
         root->right = Insert(root->right, data);
     return root;
-}
-
-int Search(Node* root, int data)
-{
-    if (root == NULL) return 0;
-    else if (root->data == data) return 1;
-    else if (data <= root->data) return Search(root->left, data);
-    else return Search(root->right, data);
 }
 
 int FindMin(Node* root) // Iterative approach

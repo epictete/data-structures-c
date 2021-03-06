@@ -18,7 +18,13 @@ int IsEmpty(void)
 
 void Enqueue(int x)
 {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    Node* temp = malloc(sizeof(Node));
+
+    if (temp == NULL)
+    {
+        printf("Memory allocation failed");
+        exit(1);
+    }
 
     temp->data = x;
     temp->next = NULL;

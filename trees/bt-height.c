@@ -36,12 +36,19 @@ Node* Insert(Node* root, int data)
     return root;
 }
 
-int Search(Node* root, int data)
+int Max(int a, int b)
 {
-    if (root == NULL) return 0;
-    else if (root->data == data) return 1;
-    else if (data <= root->data) return Search(root->left, data);
-    else return Search(root->right, data);
+    return (a >= b) ? a : b;
+}
+
+int FindHeight(Node* root)
+{
+    if (root == NULL) return -1;
+
+    int leftHeight = FindHeight(root->left);
+    int rightHeight = FindHeight(root->right);
+
+    return Max(leftHeight, rightHeight) + 1;
 }
 
 int main(void)
@@ -54,14 +61,10 @@ int main(void)
     root = Insert(root, 25);
     root = Insert(root, 8);
     root = Insert(root, 12);
+    root = Insert(root, 17);
+    root = Insert(root, 5);
 
-    int number;
-
-    printf("Enter the number to be searched : ");
-    scanf("%d", &number);
-
-    if (Search(root, number)) printf("Found\n");
-    else printf("Not Found\n");
+    printf("Height of tree : %d\n", FindHeight(root));
 
     return 0;
 }

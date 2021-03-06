@@ -28,14 +28,17 @@ void ReversePrint(Node* p)
 
 Node* Insert(Node* head, int x)
 {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    Node* temp = malloc(sizeof(Node));
 
-    if (temp != NULL)
+    if (temp == NULL)
     {
-        temp->data = x;
-        temp->next = head;
-        head = temp;
+        printf("Memory allocation failed");
+        exit(1);
     }
+
+    temp->data = x;
+    temp->next = head;
+    head = temp;
 
     return head;
 }
