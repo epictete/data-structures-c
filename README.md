@@ -6,7 +6,7 @@ Here are some implementations of the most commonly used data structures :
 - [x] [Stacks](./stacks)
 - [x] [Queues](./queues)
 - [x] [Trees](./trees)
-- [ ] Graphs
+- [x] Graphs (lectures only, no implementation)
 
 It is written in C.
 
